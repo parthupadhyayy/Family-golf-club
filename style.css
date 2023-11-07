@@ -5,6 +5,23 @@
     font-family: myFont;
     color: #fff;
 }
+
+*::selection{
+    background-color: #fff;
+    color:#A7D821;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #A7D821;
+    border-radius: 50px;
+}
+
 @font-face {
     font-family: myFont;
     src: url(Montserrat.ttf);
@@ -17,7 +34,7 @@ html, body {
 }
 #cursor{
     height:20px;
-    width: 20px;
+    width:20px;
     background-color: #8FBA1F;
     border-radius: 50%;
     position: fixed;
@@ -99,6 +116,31 @@ video{
     font-weight: 500;
     width: 40%;
 }
+#page1 #arrow{
+    height: 200px;
+    width: 200px;
+    background-color:transparent;
+    border: 2px solid #A7D821;
+    position: absolute;
+    display: flex;
+    left: -3%;
+    bottom: -0%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+
+#page1 #arrow i{
+    font-size: 50px;
+    /*font-weight: ;*/
+}
+
+#page1 #arrow:hover{
+    scale:0.4;
+    background-color: #A7D821;
+}
+
 #page2{
     min-height: 100vh;
     width: 100%;
@@ -128,14 +170,15 @@ video{
     display: inline-block;
     font-size: 120px;
     font-weight: 900;
-    font-family: gilroy;
+    font-family: myFont;
     margin-right:10px;
-    transition: all linear 0.5;
-    color: transparent;
-    -webkit-text-stroke: 2px  #8FBA1F;
+    transition: all linear 0.3s;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
 }
 #scroller h4:hover{
     color: #8FBA1F;
+    -webkit-text-stroke: 2px #8FBA1F;
 }
 
 @keyframes scroll{
@@ -255,3 +298,144 @@ video{
     object-fit: cover;
     width: 14%;
 }
+#page3{
+    height: 100vh;
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p{
+    font-size: 30px;
+    width: 55%;
+    line-height: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+#page3 #colon1{
+    left: 15%;
+    top: 25%;
+}
+#page3 #colon2{
+    bottom: 30%;
+    right: 15%;
+}
+#page4{
+    height: 50vh;
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    position: relative;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.elem{
+    height: 40%;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #A7D821;
+    display: flex;
+    color: #000;
+    align-items: center;
+    font-weight: 900;
+    justify-content: center;
+    transition: all ease 0.5s;
+    font-size: 2vw;
+    position: absolute;
+    z-index: 10;
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.5s;
+}
+.elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+.elem:hover img{
+   scale: 1;
+}
+
+#page4 h1{
+    font-size: 75px;
+    position: absolute;
+    top: 14%;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 2px white;
+    
+}
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom,#41A636,#A7D821);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+}
+
+#footer > img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+  #f1 img {
+    height: 100px;
+  }
+  #f1,
+  #f2,
+  #f3,
+  #f4 {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    /* background-color: red; */
+  }
+  #f2 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  
+  #f3 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
